@@ -87,6 +87,17 @@ int main()
 			if(!strcmp(data,"ON"))
 			{
 				printf("status is ON");
+				execv("echo", "out > /sys/class/gpio/gpio40/direction");
+				execv("echo", "out > /sys/class/gpio/gpio3/direction");
+				execv("echo", "1 > /sys/class/gpio/gpio40/value");
+                                execv("echo", "0 > /sys/class/gpio/gpio3/value");
+				
+				sleep(2);	
+				
+				execv("echo", "1 > /sys/class/gpio/gpio40/value");
+                                execv("echo", "0 > /sys/class/gpio/gpio3/value");
+				
+				sleep(5);
 			}
 
 			if(!strcmp(data,"OFF"))
