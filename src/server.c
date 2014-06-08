@@ -84,7 +84,16 @@ int main()
 				exit(1);
 		        }
 
-			check = process_data(data,output);
+			if(!strcmp(data,"ON"))
+			{
+				printf("status is ON");
+			}
+
+			if(!strcmp(data,"OFF"))
+                        {
+                                printf("status is OFF");
+                        }
+
 			if ( FAILURE == check )
 			{
 			        perror("memory");

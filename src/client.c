@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	
-	if ( argc != 5 )
+	if ( argc != 4 )
 	{
-		printf("\nIncorrect usage \ncorrect format ./<executable> <ip addr> <port no(30001)> <string1> <string2>\n");
+		printf("\nIncorrect usage \ncorrect format ./<executable> <ip addr> <port no(30001)> ON/OFF \n");
 		exit(1);
 	}
 	
@@ -54,8 +54,6 @@ int main(int argc, char *argv[])
 	}
 
         strcpy(data,argv[3]);
-        strcat(data," ");
-        strcat(data,argv[4]);
 
         if( cl_send_data(sd,data) == FAILURE )
 	{
