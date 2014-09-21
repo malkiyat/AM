@@ -84,7 +84,9 @@ int main()
 				exit(1);
 		        }
 
+			strcat(data,"\0");
 			printf("%s\n",data);					
+			printf("\nData received successfully\n");
 
 			if ( FAILURE == check )
 			{
@@ -93,7 +95,7 @@ int main()
 				exit(1);
 		        }
 
-			strcpy(output,"The data has been set!!");
+			strcpy(output,"The data has been set!!\n");
 			check = sv_send_data(new_sd,output);
 			if ( FAILURE == check )
 			{
