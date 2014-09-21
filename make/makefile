@@ -33,5 +33,3 @@ $(OBJ)client.o: $(SRC)client.c
 clean:
 	rm $(OUTPUT)server $(OUTPUT)client
 	rm $(OBJ)server.o $(OBJ)client.o
-
-

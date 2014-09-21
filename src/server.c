@@ -84,26 +84,7 @@ int main()
 				exit(1);
 		        }
 
-			if(!strcmp(data,"ON"))
-			{
-				printf("status is ON");
-				system("echo out > /sys/class/gpio/gpio40/direction");
-				system("echo out > /sys/class/gpio/gpio3/direction");
-				system("echo 1 > /sys/class/gpio/gpio40/value");
-                                system("echo 0 > /sys/class/gpio/gpio3/value");
-				
-				sleep(2);	
-				
-				system("echo 0 > /sys/class/gpio/gpio40/value");
-                                system("echo 1 > /sys/class/gpio/gpio3/value");
-				
-				sleep(5);
-			}
-
-			if(!strcmp(data,"OFF"))
-                        {
-                                printf("status is OFF");
-                        }
+			printf("%s\n",data);					
 
 			if ( FAILURE == check )
 			{
@@ -112,7 +93,7 @@ int main()
 				exit(1);
 		        }
 
-
+			strcpy(output,"The data has been set!!");
 			check = sv_send_data(new_sd,output);
 			if ( FAILURE == check )
 			{
